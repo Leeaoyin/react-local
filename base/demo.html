@@ -16,6 +16,8 @@
     <script src="../js/babel.min.js"></script>
     <script type="text/babel">
         const vdom = <h1>hello react</h1>;
+        const an_vdom = React.createElement('h2',{id: 'name'}, 'another way to create vdom');
+        
 
         ReactDOM.render(vdom,document.querySelector('.root'));
     </script>

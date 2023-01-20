@@ -19,7 +19,18 @@
             return <h1>这是用函数定义的组件，适用于简单组件的定义</h1>
         }
 
-        ReactDOM.render(<Demo/>,document.querySelector('.root'));
+        //创建类式组件
+        class MyConponent extends React.Component{
+            render(){
+                const name = 'react name';
+                return (
+                    <div>{name}</div>
+                )
+            }
+
+        }
+
+        ReactDOM.render(<MyConponent/>,document.querySelector('.root'));
     </script>
     
 </body>

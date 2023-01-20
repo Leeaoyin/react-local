@@ -22,15 +22,25 @@
         //创建类式组件
         class MyConponent extends React.Component{
             render(){
+                //render放在类的实例对象上，供实例对象使用
+                //render中的this 是MyConponent类的实例对象
+                console.log('====================================');
+                console.log(this);
+                console.log('====================================');
                 const name = 'react name';
                 return (
-                    <div>{name}</div>
+                    <h1>{name}</h1>
                 )
             }
 
         }
 
         ReactDOM.render(<MyConponent/>,document.querySelector('.root'));
+        /**
+         * 执行ReactDOM.render(<MyConponent/>....发生了什么？
+         * 1、React解析组件标签，找到了MyMyConponent组件
+         * 2、发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用到原型上的render方法。
+         * 3、将render返回的虚拟dom转为真实dom，随后呈现在页面中。
     </script>
     
 </body>

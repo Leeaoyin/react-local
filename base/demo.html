@@ -17,9 +17,19 @@
     <script type="text/babel">
         const vdom = <h1>hello react</h1>;
         const an_vdom = React.createElement('h2',{id: 'name'}, 'another way to create vdom');
-        
+        const exdata = ['java','python','c'];
+        const VDOM = (
+            <div>
+                <h1>列表</h1>
+                <ul>
+                    {exdata.map((item)=>{
+                        return <li>{item}</li>
+                    })}
+                </ul>
+            </div>
+        )
 
-        ReactDOM.render(vdom,document.querySelector('.root'));
+        ReactDOM.render(VDOM,document.querySelector('.root'));
     </script>
 </body>
 

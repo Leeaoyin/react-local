@@ -15,11 +15,11 @@
     <script src="../js/babel.min.js"></script>
     <script type="text/babel">
         class Weather extends React.Component{
-            constructor(props) {
-                super(props);
-                // this.state = { isHot: true,wind:'8F'};
-                this.changeWeather = this.changeWeather.bind(this);
-            }
+            // constructor(props) {
+            //     super(props);
+            //     // this.state = { isHot: true,wind:'8F'};
+            //     // this.changeWeather = this.changeWeather.bind(this);
+            // }
             state = { 
                 isHot: true,
                 wind:'8F'
@@ -28,9 +28,16 @@
                 const { isHot,wind } = this.state;
                 return <h1 onClick={this.changeWeather}>今天的天气是：{isHot ? '炎热' : '寒冷'}，{wind}级风</h1>
             }
-            changeWeather() {
+            // changeWeather() {
+            //     const isHot = this.state.isHot;
+            //     this.setState({isHot:!isHot})
+            // }
+            // changeWeather = function(){
+            //     //todo
+            // }
+            changeWeather = ()=>{
                 const isHot = this.state.isHot;
-                this.setState({isHot:!isHot})
+                this.setState({isHot:!isHot});
             }
         }
         ReactDOM.render(<Weather/>, document.querySelector('.root'));

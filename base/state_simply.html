@@ -20,6 +20,8 @@
             //     // this.state = { isHot: true,wind:'8F'};
             //     // this.changeWeather = this.changeWeather.bind(this);
             // }
+
+            //初始化状态
             state = { 
                 isHot: true,
                 wind:'8F'
@@ -35,6 +37,8 @@
             // changeWeather = function(){
             //     //todo
             // }
+
+            //自定义方法---要用复制语句的形式+箭头函数
             changeWeather = ()=>{
                 const isHot = this.state.isHot;
                 this.setState({isHot:!isHot});

@@ -17,9 +17,13 @@
         class Weather extends React.Component{
             constructor(props) {
                 super(props);
-                this.state = { isHot: true,wind:'8F'};
+                // this.state = { isHot: true,wind:'8F'};
                 this.changeWeather = this.changeWeather.bind(this);
             }
+            state = { 
+                isHot: true,
+                wind:'8F'
+            };
             render() {
                 const { isHot,wind } = this.state;
                 return <h1 onClick={this.changeWeather}>今天的天气是：{isHot ? '炎热' : '寒冷'}，{wind}级风</h1>

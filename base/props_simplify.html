@@ -20,6 +20,8 @@
     <script src="../js/prop-types.js"></script>
     <script type="text/babel">
         class Person extends React.Component{
+
+            //初始化状态
             state = {jksh:1};
 
             //给类自身加属性的方式
@@ -36,9 +38,6 @@
         }
 
             render(){
-                // console.log('====================================');
-                // console.log(this);其中的this对象是组件的实例对象
-                // console.log('====================================');
                 const {name,age,sex} = this.props;
                 return (
                     <div>

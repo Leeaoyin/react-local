@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>base of props</title>
+</head>
+
+<body>
+    <div class="root"></div>
+    <!-- 引入react核心库 -->
+    <script src="../js/react.development.js"></script>
+    <!-- 用于支持react操作dom -->
+    <script src="../js/react-dom.development.js"></script>
+    <!-- 用于将jsx转为js -->
+    <script src="../js/babel.min.js"></script>
+    <!-- 用于对组件标签属性进行限制 -->
+    <script src="../js/prop-types.js"></script>
+    <script type="text/babel">
+
+        //函数式组件怎么用props,注意函数式组件现在还用不了state，后续可通过hooks实现
+        function Person(props){
+
+
+            return (
+                    <div>
+                        <ul>
+                            <li>{props.name}</li>
+                            <li>{props.age}</li>
+                            <li>{props.sex}</li>
+                            </ul>
+                        </div>
+                )
+        }
+        //限制属性类型以及是否必须
+        Person.propTypes = {
+            name:PropTypes.string.isRequired,
+            sex:PropTypes.string,
+            age:PropTypes.number,
+            speak:PropTypes.func  //限制speak为函数
+        }
+        //属性默认值
+        Person.defaultProps = {
+            sex:'?',
+            age:18
+        }
+        
+        //注意组件中的数字类型要用{}表示
+        ReactDOM.render(<Person name="andy"/>, document.querySelector('.root'));
+
+    </script>
+</body>
+
+</html>

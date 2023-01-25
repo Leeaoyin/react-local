@@ -22,6 +22,19 @@
         class Person extends React.Component{
             state = {jksh:1};
 
+            //给类自身加属性的方式
+        static propTypes = {
+            name:PropTypes.string.isRequired,
+            sex:PropTypes.string,
+            age:PropTypes.number,
+            speak:PropTypes.func  //限制speak为函数
+        }
+        //给类自身加属性的方式
+        static defaultProps = {
+            sex:'?',
+            age:18
+        }
+
             render(){
                 // console.log('====================================');
                 // console.log(this);其中的this对象是组件的实例对象
@@ -40,18 +53,7 @@
             }
         }
 
-        //限制属性类型以及是否必须
-        Person.propTypes = {
-            name:PropTypes.string.isRequired,
-            sex:PropTypes.string,
-            age:PropTypes.number,
-            speak:PropTypes.func  //限制speak为函数
-        }
-        //属性默认值
-        Person.defaultProps = {
-            sex:'?',
-            age:18
-        }
+        
         //注意组件中的数字类型要用{}表示
         ReactDOM.render(<Person name="andy" age={19} sex="male"/>, document.querySelector('.root'));
 

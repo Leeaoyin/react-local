@@ -26,7 +26,12 @@
                 //原生写法
                 // let input = document.querySelector('.input1');
                 const {input1} = this.refs;
-                console.log(input1.value);
+                
+                if(input1.value === ''){
+                    alert('没有数据');
+                }else{
+                    alert(input1.value)
+                }
             }
             showData2 = ()=>{
                 const {input2} = this.refs;

@@ -21,14 +21,12 @@
     <script src="../js/prop-types.js"></script>
     <script type="text/babel">
         class Demo extends React.Component{
+            //createRef调用后可以返回一个容器，该容器可以存储被ref所标识的节点，不能多个节点使用同一个createRef
             myRef_input1 = React.createRef();
             myRef_input2 = React.createRef();
 
             showData = ()=>{
-                //原生写法
-                // let input = document.querySelector('.input1');
                 const {input1} = this;
-                
                 if(input1.value === ''){
                     alert('没有数据');
                 }else{
@@ -40,7 +38,6 @@
                 const {input2} = this;
                 alert(input2.value);
             }
-            //ref中使用回调函数
             render(){
                 return(
                     <div>

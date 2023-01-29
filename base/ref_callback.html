@@ -25,7 +25,7 @@
             showData = ()=>{
                 //原生写法
                 // let input = document.querySelector('.input1');
-                const {input1} = this.refs;
+                const {input1} = this;
                 
                 if(input1.value === ''){
                     alert('没有数据');
@@ -35,16 +35,17 @@
                 input1.style.backgroundColor = 'red';
             }
             showData2 = ()=>{
-                const {input2} = this.refs;
-                console.log(input2.value);
+                const {input2} = this;
+                alert(input2.value);
             }
 
+            //ref中使用回调函数
             render(){
                 return(
                     <div>
-                        <input ref = "input1" type="text" placeholder="点击按钮提示数据"/><br/><br/>
+                        <input ref = {(c)=>{this.input1 = c}} type="text" placeholder="点击按钮提示数据"/><br/><br/>
                         <button onClick = {this.showData}>点我提示上方的数据</button><br/><br/>
-                        <input ref = "input2" onBlur = {this.showData2} type="text" placeholder="失去焦点提示数据" />
+                        <input ref = {(c)=>{this.input2 = c}} onBlur = {this.showData2} type="text" placeholder="失去焦点提示数据" />
                         </div>
                 )
             }

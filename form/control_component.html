@@ -30,12 +30,13 @@
                     username:event.target.value,
                 });
             }
-            saveUsername = (event)=>{
+            savePassword = (event)=>{
                 this.setState({
                     password:event.target.value,
                 });
             }
-            handleSubmit  = ()=>{
+            handleSubmit  = (event)=>{
+                event.preventDefault();
                 
                 console.log(this.state.username+this.state.password);
                 

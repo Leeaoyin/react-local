@@ -20,42 +20,42 @@
     <!-- 用于对组件标签属性进行限制 -->
     <script src="../js/prop-types.js"></script>
     <script type="text/babel">
-        class Login extends React.Component{
+        class Login extends React.Component {
             state = {
-                username:'',
-                password:'',
+                username: '',
+                password: '',
             }
-            saveUsername = (event)=>{
+            saveUsername = (event) => {
                 this.setState({
-                    username:event.target.value,
+                    username: event.target.value,
                 });
             }
-            savePassword = (event)=>{
+            savePassword = (event) => {
                 this.setState({
-                    password:event.target.value,
+                    password: event.target.value,
                 });
             }
-            handleSubmit  = (event)=>{
+            handleSubmit = (event) => {
                 event.preventDefault();
-                
-                console.log(this.state.username+this.state.password);
-                
+
+                console.log(this.state.username + this.state.password);
+
             }
-            render(){
+            render() {
                 return (
                     <div>
-                        <form action="" onSubmit = {this.handleSubmit}>
-                            用户名：<input  onChange = {this.saveUsername} type="text" name="username"/>
-                            密  码：<input  onChange = {this.savePassword} type="password" name="password"/>
+                        <form action="" onSubmit={this.handleSubmit}>
+                            用户名：<input onChange={this.saveUsername} type="text" name="username" />
+                            密  码：<input onChange={this.savePassword} type="password" name="password" />
                             <button type="submit">提交</button>
-                            
+
                         </form>
-                        
+
                     </div>
                 )
             }
         }
-        ReactDOM.render(<Login/>, document.querySelector('.app'));
+        ReactDOM.render(<Login />, document.querySelector('.app'));
 
     </script>
 </body>

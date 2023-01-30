@@ -21,18 +21,31 @@
     <script src="../js/prop-types.js"></script>
     <script type="text/babel">
         class Login extends React.Component{
-            handleSubmit  = (event)=>{
-                event.preventDefault();
-                //现用现取
-                const {username,password} = this;
-                alert('用户名'+username.value+',密码'+password.value);
+            state = {
+                username:'',
+                password:'',
+            }
+            saveUsername = (event)=>{
+                this.setState({
+                    username:event.target.value,
+                });
+            }
+            saveUsername = (event)=>{
+                this.setState({
+                    password:event.target.value,
+                });
+            }
+            handleSubmit  = ()=>{
+                
+                console.log(this.state.username+this.state.password);
+                
             }
             render(){
                 return (
                     <div>
                         <form action="" onSubmit = {this.handleSubmit}>
-                            用户名：<input ref = {c => this.username = c} type="text" name="username"/>
-                            密  码：<input ref = {c => this.password = c} type="password" name="password"/>
+                            用户名：<input  onChange = {this.saveUsername} type="text" name="username"/>
+                            密  码：<input  onChange = {this.savePassword} type="password" name="password"/>
                             <button type="submit">提交</button>
                             
                         </form>

@@ -21,34 +21,34 @@
     <script type="text/babel">
 
         //函数式组件怎么用props,注意函数式组件现在还用不了state，后续可通过hooks实现
-        function Person(props){
+        function Person(props) {
 
 
             return (
-                    <div>
-                        <ul>
-                            <li>{props.name}</li>
-                            <li>{props.age}</li>
-                            <li>{props.sex}</li>
-                            </ul>
-                        </div>
-                )
+                <div>
+                    <ul>
+                        <li>{props.name}</li>
+                        <li>{props.age}</li>
+                        <li>{props.sex}</li>
+                    </ul>
+                </div>
+            )
         }
         //限制属性类型以及是否必须
         Person.propTypes = {
-            name:PropTypes.string.isRequired,
-            sex:PropTypes.string,
-            age:PropTypes.number,
-            speak:PropTypes.func  //限制speak为函数
+            name: PropTypes.string.isRequired,
+            sex: PropTypes.string,
+            age: PropTypes.number,
+            speak: PropTypes.func  //限制speak为函数
         }
         //属性默认值
         Person.defaultProps = {
-            sex:'?',
-            age:18
+            sex: '?',
+            age: 18
         }
-        
+
         //注意组件中的数字类型要用{}表示
-        ReactDOM.render(<Person name="andy"/>, document.querySelector('.root'));
+        ReactDOM.render(<Person name="andy" />, document.querySelector('.root'));
 
     </script>
 </body>
